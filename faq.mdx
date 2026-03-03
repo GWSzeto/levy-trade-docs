@@ -1,0 +1,52 @@
+---
+title: "FAQ"
+description: "Frequently asked questions about Levy Trade."
+---
+
+<AccordionGroup>
+  <Accordion title="How are my private keys stored?">
+    Private keys are generated locally on our server, then immediately encrypted using **Google Cloud KMS** and stored as ciphertext. Keys are only decrypted on-demand for transaction signing, then immediately discarded from memory. You retain exclusive access to your funds and can export your private key at any time via `/settings`.
+
+    You can also enable biometric 2FA via the `/security` command for additional protection.
+  </Accordion>
+
+  <Accordion title="How do I withdraw my funds?">
+    You have two options:
+
+    1. **Direct withdrawal:** Use the `/withdraw` command to send funds to another Hyperliquid L1 wallet address.
+    2. **Key export:** Export your private key through `/settings`, import it into MetaMask or any EVM-compatible wallet, and use [Hyperliquid's portfolio page](https://app.hyperliquid.xyz/portfolio) to bridge USDC to Arbitrum.
+  </Accordion>
+
+  <Accordion title="Can I connect an existing Hyperliquid account?">
+    Yes. Use the `/accounts` command, then press **"Add New Hyperliquid Account"**. You'll need to enter your wallet address and generate an API key from Hyperliquid.
+
+    Note that API-connected wallets have limited functionality — they are not eligible for the points program.
+  </Accordion>
+
+  <Accordion title="What are the trading fees?">
+    - **Perpetual futures:** 0.05% per trade (on both opens and closes)
+    - **Spot buys:** Free
+    - **Spot sells:** ~0.10% (2x the effective perp fee)
+    - **Bridging and deposits:** No fee
+    - **Liquidations:** No fee
+
+    Fees decrease as you level up and increase your trading volume. See [Fee Tiers](/fee-tiers) for the full breakdown.
+  </Accordion>
+
+  <Accordion title="What is the minimum deposit?">
+    Bridging requires a minimum of **10 USDC**. You can deposit via:
+    - **Hyperliquid L1** (native)
+    - **Arbitrum** (bridged automatically)
+    - **Solana** (bridged via deBridge)
+
+    After sending funds, run any command in the bot to trigger deposit processing if it hasn't arrived yet.
+  </Accordion>
+
+  <Accordion title="I sent the wrong asset (SOL, ETH, USDT, etc.) — can I recover it?">
+    Yes. Go to `/settings` and export your EVM or Solana private key. Import the key into a compatible wallet (MetaMask for EVM, Phantom for Solana) to access and recover the assets.
+  </Accordion>
+
+  <Accordion title="Any trading tips?">
+    Don't get liquidated.
+  </Accordion>
+</AccordionGroup>

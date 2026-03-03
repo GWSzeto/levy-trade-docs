@@ -1,0 +1,75 @@
+---
+title: "Commands"
+description: "Complete reference for all Levy Trade bot commands."
+---
+
+## Trading — Perpetuals
+
+| Command | Description |
+|---------|-------------|
+| `/long` | Open a leveraged long position. Shorthand: `/long BTC 10 100` (ticker, leverage, margin) |
+| `/short` | Open a leveraged short position. Shorthand: `/short ETH 5 50` |
+| `/close` | Close a position by percentage. Example: `/close BTC 100` or `/close all 30` |
+| `/pair` | Open simultaneous long and short positions on different assets |
+| `/limit` | Place a limit order at a specific price |
+| `/stoploss` | Set a stop loss on an existing position |
+| `/takeprofit` | Set a take profit on an existing position |
+| `/stoplimit` | Set a stop limit order on an existing position |
+| `/orders` | View and cancel open/pending orders |
+
+## Trading — Spot
+
+| Command | Description |
+|---------|-------------|
+| `/buy` | Buy spot tokens with USDC |
+| `/sell` | Sell spot tokens for USDC |
+
+<Note>
+  Spot trading requires USDC in your spot sub-account. Use `/transfer` to move funds from perps to spot.
+</Note>
+
+## Market Information
+
+| Command | Description |
+|---------|-------------|
+| `/markets` | Browse all available perpetual trading pairs |
+| `/chart` or `/c` | Display a candlestick price chart with group trade overlays. Supports timeframes: `1m`, `5m`, `15m`, `1h`, `4h`, `1d` |
+| `/price` | Get the current price of any token |
+| `/hype` | Quick shortcut for the current HYPE token price |
+| `/alert` | Set a price notification. Example: `/alert HYPE 20` |
+
+## Performance & Analytics
+
+| Command | Description |
+|---------|-------------|
+| `/positions` | View your open positions. Use `/positions @username` to view another user's |
+| `/pnl` | Generate a PnL chart. Timeframes: `1d`, `7d`, `30d`, `all`. Use `/pnl @username` to view another user's |
+| `/leaderboards` | Display the trading leaderboard for the current group. Timeframes: `week`, `1d`, `7d`, `30d`, `all` |
+| `/stats` | View your personal trading statistics (volume, trade count, referral stats) |
+| `/points` | Check your points balance |
+
+## Account & Wallet
+
+| Command | Description |
+|---------|-------------|
+| `/start` | Display wallet balances, deposit addresses, and onboarding info |
+| `/wallet` | Show all wallet addresses and balances |
+| `/balances` | View your spot account holdings |
+| `/accounts` | Manage wallets — add accounts, set primary trading account |
+| `/transfer` | Move USDC between spot and perps sub-accounts |
+| `/withdraw` | Send funds to another Hyperliquid L1 address |
+| `/send` | Send USDC to a group member (minimum 5 USDC). Aliases: `/heal`, `/tip`, `/revive` |
+
+## Social
+
+| Command | Description |
+|---------|-------------|
+| `/invite` | Get your referral code and see referral count |
+| `/rewards` | Check reward stats and submit claims (minimum 10 USDC) |
+
+## Settings & Security
+
+| Command | Description |
+|---------|-------------|
+| `/settings` | Adjust bot preferences, export private keys, contact support |
+| `/security` | Set up TOTP-based two-factor authentication |
