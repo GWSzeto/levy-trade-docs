@@ -1,52 +1,34 @@
 ---
 title: "FAQ"
-description: "Frequently asked questions about Levy Trade."
+description: "Frequently Asked Questions"
 ---
 
-<AccordionGroup>
-  <Accordion title="How are my private keys stored?">
-    Private keys are generated locally on our server, then immediately encrypted using **Google Cloud KMS** and stored as ciphertext. Keys are only decrypted on-demand for transaction signing, then immediately discarded from memory. You retain exclusive access to your funds and can export your private key at any time via `/settings`.
+### Where are private keys stored?
 
-    You can also enable biometric 2FA via the `/security` command for additional protection.
-  </Accordion>
+Private keys are stored and encrypted by Turnkey, which was founded by the team that built Coinbase Custody. Only you have access to your private key as it is stored with Turnkey's verifiably secure enclaves. You can use the /security command to setup 2FA with biometric passkeys (Touch ID/Face ID).
 
-  <Accordion title="How do I withdraw my funds?">
-    You have two options:
+### How do I withdraw funds from Levy Trade?
 
-    1. **Direct withdrawal:** Use the `/withdraw` command to send funds to another Hyperliquid L1 wallet address.
-    2. **Key export:** Export your private key through `/settings`, import it into MetaMask or any EVM-compatible wallet, and use [Hyperliquid's portfolio page](https://app.hyperliquid.xyz/portfolio) to bridge USDC to Arbitrum.
-  </Accordion>
+You can always export your private key in `/settings`.
 
-  <Accordion title="Can I connect an existing Hyperliquid account?">
-    Yes. Use the `/accounts` command, then press **"Add New Hyperliquid Account"**. You'll need to enter your wallet address and generate an API key from Hyperliquid.
+You can also withdraw to another wallet you own on the Hyperliquid L1 using the `/withdraw` command. Once withdrawn, you can go to [https://app.hyperliquid.xyz/portfolio](https://app.hyperliquid.xyz/portfolio) and connect with the wallet you withdrew to. Then, you can withdraw USDC from the Hyperliquid L1 to Arbitrum using the Hyperliquid UI.
 
-    Note that API-connected wallets have limited functionality — they are not eligible for the points program.
-  </Accordion>
+### How can I connect my existing Hyperliquid account to Levy Trade?
 
-  <Accordion title="What are the trading fees?">
-    - **Perpetual futures:** 0.05% per trade (on both opens and closes)
-    - **Spot buys:** Free
-    - **Spot sells:** ~0.10% (2x the effective perp fee)
-    - **Bridging and deposits:** No fee
-    - **Liquidations:** No fee
+Use the `/accounts` command, and then you can attach your existing Hyperliquid account by pressing "Add New Hyperliquid Account". You'll then be prompted to enter your wallet address and to generate an API key, which we'll use to authenticate your account.
 
-    Fees decrease as you level up and increase your trading volume. See [Fee Tiers](/fee-tiers) for the full breakdown.
-  </Accordion>
+### What fees are collected on trades by Levy Trade?
 
-  <Accordion title="What is the minimum deposit?">
-    Bridging requires a minimum of **10 USDC**. You can deposit via:
-    - **Hyperliquid L1** (native)
-    - **Arbitrum** (bridged automatically)
-    - **Solana** (bridged via deBridge)
+There is a 0.05% fee on futures trades, and a 0.5% fee on spot trades (only sells - there are no fees on spot buys). There is no fee on bridging or liquidations.
 
-    After sending funds, run any command in the bot to trigger deposit processing if it hasn't arrived yet.
-  </Accordion>
+### Why haven't my bridged funds come through yet?
 
-  <Accordion title="I sent the wrong asset (SOL, ETH, USDT, etc.) — can I recover it?">
-    Yes. Go to `/settings` and export your EVM or Solana private key. Import the key into a compatible wallet (MetaMask for EVM, Phantom for Solana) to access and recover the assets.
-  </Accordion>
+There is a minimum deposit limit of 10 USDC to initiate the bridging process. If you've deposited at least 10 USDC and have not received it on Levy Trade yet, run any command to initiate the bridging process.
 
-  <Accordion title="Any trading tips?">
-    Don't get liquidated.
-  </Accordion>
-</AccordionGroup>
+### I accidentally sent SOL / ETH / USDT / etc to my wallet instead of USDC. How can I recover it?
+
+If you've sent a non-USDC asset to either your EVM or Solana wallet, run `/settings` to export your EVM private key (Export private key) or your Solana private key (Export Solana key). Then, you can import it to a wallet of your choice to recover your funds.
+
+### Any trading tips?
+
+Don't get liquidated.

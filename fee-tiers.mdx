@@ -1,74 +1,84 @@
 ---
 title: "Fee Tiers"
-description: "Understanding the Levy Trade fee structure and how to reduce your trading fees."
+description: "Fees and Discounts"
 ---
 
-Levy Trade fees are calculated using three components that stack together: **level-based discounts**, **30-day volume discounts**, and **per-trade leverage discounts**.
+The Levy Trade fee structure consists of **three components**.
 
-## Base Fees
+## Permanent Level-Based Discounts
 
-| Type | Fee |
-|------|-----|
-| Perpetual futures | 0.05% per trade (open and close) |
-| Spot buys | Free (0%) |
-| Spot sells | 2x the effective perp fee (~0.10% base) |
-| Bridging / deposits | No fee |
-| Liquidations | No fee |
+Traders unlock permanent fee discounts ending at level 99, with each milestone reducing the base fee progressively. Achieving Level 98 permanently reduces your base fee to as low as 0.0250% (2.5bps).
 
-## Level-Based Discounts
+<table>
+  <thead>
+    <tr>
+      <th>Level Required</th>
+      <th>Fee Range</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>0.025% - 0.040%</td></tr>
+    <tr><td>15</td><td>0.024% - 0.039%</td></tr>
+    <tr><td>30</td><td>0.023% - 0.038%</td></tr>
+    <tr><td>40</td><td>0.022% - 0.037%</td></tr>
+    <tr><td>50</td><td>0.021% - 0.036%</td></tr>
+    <tr><td>58</td><td>0.020% - 0.035%</td></tr>
+    <tr><td>65</td><td>0.019% - 0.034%</td></tr>
+    <tr><td>72</td><td>0.018% - 0.033%</td></tr>
+    <tr><td>77</td><td>0.017% - 0.032%</td></tr>
+    <tr><td>81</td><td>0.016% - 0.031%</td></tr>
+    <tr><td>84</td><td>0.015% - 0.030%</td></tr>
+    <tr><td>87</td><td>0.014% - 0.029%</td></tr>
+    <tr><td>90</td><td>0.013% - 0.028%</td></tr>
+    <tr><td>93</td><td>0.012% - 0.027%</td></tr>
+    <tr><td>96</td><td>0.011% - 0.026%</td></tr>
+    <tr><td>98</td><td>0.010% - 0.025%</td></tr>
+  </tbody>
+</table>
 
-As you level up through trading, your fee tier permanently improves. See [Levels](/levels) for how to earn XP.
+## 30D Volume-Based Discounts
 
-| Level | Fee Range (Maker — Taker) |
-|-------|--------------------------|
-| 1 | 0.025% — 0.040% |
-| 15 | 0.024% — 0.039% |
-| 30 | 0.023% — 0.038% |
-| 39 | 0.022% — 0.037% |
-| 50 | 0.021% — 0.036% |
-| 58 | 0.020% — 0.035% |
-| 65 | 0.019% — 0.034% |
-| 72 | 0.018% — 0.033% |
-| 77 | 0.017% — 0.032% |
-| 81 | 0.016% — 0.031% |
-| 84 | 0.015% — 0.030% |
-| 87 | 0.014% — 0.029% |
-| 90 | 0.013% — 0.028% |
-| 93 | 0.012% — 0.027% |
-| 96 | 0.011% — 0.026% |
-| 98 | 0.010% — 0.025% |
+In addition to your level-based discount, trading actively within the last 30 days earns you further fee reductions, up to 1.5 bps. Discounts scale according to your rolling 30-day trading volume:
 
-## 30-Day Volume Discounts
+<table>
+  <thead>
+    <tr>
+      <th>Volume</th>
+      <th>Discount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>&lt; $10,000,000</td><td>0</td></tr>
+    <tr><td>&ge; $10,000,000</td><td>-0.003% (0.3 bps)</td></tr>
+    <tr><td>&ge; $25,000,000</td><td>-0.006% (0.6 bps)</td></tr>
+    <tr><td>&ge; $100,000,000</td><td>-0.009% (0.9 bps)</td></tr>
+    <tr><td>&ge; $500,000,000</td><td>-0.012% (1.2 bps)</td></tr>
+    <tr><td>&ge; $1,000,000,000</td><td>-0.015% (1.5 bps)</td></tr>
+  </tbody>
+</table>
 
-Your rolling 30-day trading volume applies an additional discount on top of your level-based fee tier.
+## Effective Leverage-Based Discount (Per-Trade)
 
-| 30-Day Volume | Discount |
-|---------------|----------|
-| Under $10M | 0 bps |
-| $10M+ | -0.3 bps |
-| $25M+ | -0.6 bps |
-| $100M+ | -0.9 bps |
-| $500M+ | -1.2 bps |
-| $1B+ | -1.5 bps |
+Every individual trade also qualifies for a dynamic discount determined by its **effective leverage** (notional value / account equity). The discount grows linearly to a maximum of **4 bps at 40x leverage**.
 
-## Per-Trade Leverage Discount
+<table>
+  <thead>
+    <tr>
+      <th>Effective Leverage</th>
+      <th>Additional Discount (bps)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>0x</td><td>0</td></tr>
+    <tr><td>10x</td><td>1</td></tr>
+    <tr><td>20x</td><td>2</td></tr>
+    <tr><td>30x</td><td>3</td></tr>
+    <tr><td>40x +</td><td>4 (max)</td></tr>
+  </tbody>
+</table>
 
-Each trade receives a dynamic discount based on effective leverage (notional / equity). This discount applies on both opening and closing trades.
+*The leverage discount applies on both the opening and closing side of a position. Total fees can never be negative; any discount that would reduce the fee below 0 bps is capped at 0 bps.*
 
-| Effective Leverage | Discount |
-|-------------------|----------|
-| 0x | 0 bps |
-| 10x | 1 bps |
-| 20x | 2 bps |
-| 30x | 3 bps |
-| 40x+ | 4 bps (max) |
+## Spot Fees
 
-The discount scales linearly between these thresholds.
-
-## Fee Floor
-
-Total fees can never go below 0 bps. Any combination of discounts that would result in a negative fee is capped at zero.
-
-## Spot Fee Calculation
-
-Spot sell fees are calculated as **2x your effective perpetual fee rate**. Spot buys are always free.
+Spot fees only apply on sells. Your spot sell fee equals your effective perp fee **multiplied by 2**. Using the example above, the same trader would pay **0.10%** when selling spot tokens (5 x 0.02%).

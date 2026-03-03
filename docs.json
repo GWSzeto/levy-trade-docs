@@ -14,29 +14,16 @@
         "tab": "Documentation",
         "groups": [
           {
-            "group": "Getting Started",
+            "group": "",
             "pages": [
-              "index"
-            ]
-          },
-          {
-            "group": "Trading",
-            "pages": [
+              "quickstart",
               "commands",
-              "fee-tiers"
-            ]
-          },
-          {
-            "group": "Progression",
-            "pages": [
+              "copytrading",
+              "faq",
+              "fee-tiers",
               "levels",
-              "points"
-            ]
-          },
-          {
-            "group": "Support",
-            "pages": [
-              "faq"
+              "points",
+              "referrals"
             ]
           }
         ]
