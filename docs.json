@@ -9,23 +9,18 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Documentation",
-        "groups": [
-          {
-            "group": "",
-            "pages": [
-              "quickstart",
-              "commands",
-              "copytrading",
-              "faq",
-              "fee-tiers",
-              "levels",
-              "points",
-              "referrals"
-            ]
-          }
+        "group": "",
+        "pages": [
+          "quickstart",
+          "commands",
+          "copytrading",
+          "faq",
+          "fee-tiers",
+          "levels",
+          "points",
+          "referrals"
         ]
       }
     ],
