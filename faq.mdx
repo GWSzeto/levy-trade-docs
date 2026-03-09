@@ -5,29 +5,35 @@ description: "Frequently Asked Questions"
 
 ### Where are private keys stored?
 
-Private keys are stored and encrypted by Turnkey, which was founded by the team that built Coinbase Custody. Only you have access to your private key as it is stored with Turnkey's verifiably secure enclaves. You can use the /security command to setup 2FA with biometric passkeys (Touch ID/Face ID).
+Managed wallet keys are created locally by Levy Trade and encrypted with GCP KMS before they are stored. The bot only decrypts them when it needs to sign an action or export your EVM key. You can use `/security` in DMs to turn on TOTP 2FA for key export, withdrawals, and sends.
 
 ### How do I withdraw funds from Levy Trade?
 
-You can always export your private key in `/settings`.
+You can use `/withdraw` to send USDC from a managed wallet to either another Hyperliquid address or an Arbitrum address.
 
-You can also withdraw to another wallet you own on the Hyperliquid L1 using the `/withdraw` command. Once withdrawn, you can go to [https://app.hyperliquid.xyz/portfolio](https://app.hyperliquid.xyz/portfolio) and connect with the wallet you withdrew to. Then, you can withdraw USDC from the Hyperliquid L1 to Arbitrum using the Hyperliquid UI.
+If you want full control of your managed EVM wallet, you can also export its private key from `/settings` in DMs.
 
 ### How can I connect my existing Hyperliquid account to Levy Trade?
 
-Use the `/accounts` command, and then you can attach your existing Hyperliquid account by pressing "Add New Hyperliquid Account". You'll then be prompted to enter your wallet address and to generate an API key, which we'll use to authenticate your account.
+Use `/accounts` and add an API account. The bot will ask for your main Hyperliquid wallet address and the agent wallet private key from Hyperliquid API settings.
 
 ### What fees are collected on trades by Levy Trade?
 
-There is a 0.05% fee on futures trades, and a 0.5% fee on spot trades (only sells - there are no fees on spot buys). There is no fee on bridging or liquidations.
+Perp fees are dynamic. Your effective fee depends on your level, your rolling 30-day volume, and the leverage on that trade. See [Fee Tiers](/fee-tiers) for the full breakdown.
 
 ### Why haven't my bridged funds come through yet?
 
-There is a minimum deposit limit of 10 USDC to initiate the bridging process. If you've deposited at least 10 USDC and have not received it on Levy Trade yet, run any command to initiate the bridging process.
+There is a minimum deposit limit of **10 USDC** to start the deposit flow. If you sent at least 10 USDC on Hyperliquid L1, Arbitrum, or Solana, give it a few minutes and then check `/wallet` or `/deposit` again to refresh your balances.
 
 ### I accidentally sent SOL / ETH / USDT / etc to my wallet instead of USDC. How can I recover it?
 
-If you've sent a non-USDC asset to either your EVM or Solana wallet, run `/settings` to export your EVM private key (Export private key) or your Solana private key (Export Solana key). Then, you can import it to a wallet of your choice to recover your funds.
+If you sent an asset to your managed EVM address by mistake, you can export the EVM private key from `/settings` in DMs and import it into another wallet to recover the funds.
+
+Levy Trade does not currently expose Solana key export in the bot. If the asset landed on your Solana deposit address, contact support.
+
+### How do I secure my account?
+
+Use `/security` in DMs to enable TOTP 2FA. Once it is on, the bot will ask for a 6-digit code before sensitive actions like key export, withdrawals, and sends.
 
 ### Any trading tips?
 

@@ -7,7 +7,7 @@ The Levy Trade fee structure consists of **three components**.
 
 ## Permanent Level-Based Discounts
 
-Traders unlock permanent fee discounts ending at level 99, with each milestone reducing the base fee progressively. Achieving Level 98 permanently reduces your base fee to as low as 0.0250% (2.5bps).
+Traders unlock permanent fee discounts as they level up. At Level 98, your base fee reaches **0.010% maker / 0.025% taker** before any other discounts are applied.
 
 <table>
   <thead>
@@ -57,9 +57,9 @@ In addition to your level-based discount, trading actively within the last 30 da
   </tbody>
 </table>
 
-## Effective Leverage-Based Discount (Per-Trade)
+## Leverage-Based Discount (Per-Trade)
 
-Every individual trade also qualifies for a dynamic discount determined by its **effective leverage** (notional value / account equity). The discount grows linearly to a maximum of **4 bps at 40x leverage**.
+Every individual trade also qualifies for a dynamic discount based on the **leverage you select for that trade**. The discount grows linearly to a maximum of **4 bps at 40x leverage**.
 
 <table>
   <thead>
@@ -79,6 +79,6 @@ Every individual trade also qualifies for a dynamic discount determined by its *
 
 *The leverage discount applies on both the opening and closing side of a position. Total fees can never be negative; any discount that would reduce the fee below 0 bps is capped at 0 bps.*
 
-## Spot Fees
+## Spot balances
 
-Spot fees only apply on sells. Your spot sell fee equals your effective perp fee **multiplied by 2**. Using the example above, the same trader would pay **0.10%** when selling spot tokens (5 x 0.02%).
+Levy Trade still shows spot balances inside `/wallet`, `/deposit`, and `/transfer`, but the live bot currently exposes **perp trading only**. There are no active `/buy` or `/sell` commands in the current command set.

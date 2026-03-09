@@ -2,12 +2,14 @@
 title: "Points"
 ---
 
-The Levy Trade points program began on July 27, 2024. Points are distributed every week on Saturdays, based on your activity and referral contributions.
+The Levy Trade points program uses a fixed supply of **1,000,000 points**.
 
-You earn 1 point for every 5 points your referred users earn. Only wallets created through Levy Trade are eligible for points — wallets connected via API key are excluded.
+Points are distributed every week on **Saturday at 00:00 UTC**. Each weekly trading distribution uses a **10,000 point pool** until the full supply has been handed out.
 
-There are a total of 1,000,000 points. Weekly point distributions adjust based on overall user activity. As of February 15, 2025, all points have been distributed.
+Weekly trading points are split by trading volume for that period. On the first distribution, the bot counts all historical trading volume. After that, it uses the last 7 days of recorded volume.
 
-Bonus points are awarded to the top 10 clans every week. Clans must have at least 3 active members at the time of the snapshot to qualify for bonus distributions.
+Only users whose primary account is a **Levy Trade-managed wallet** are eligible for points. API-connected accounts do not earn points.
 
-Levy Trade reserves the right to modify previous point distributions under its sole discretion.
+Direct referrers also earn a bonus on top of the trading pool: you get **1 point for every 5 points** your L1 referrals earn.
+
+Use `/points` to see your balance, rank, next distribution date, and total points distributed so far.
