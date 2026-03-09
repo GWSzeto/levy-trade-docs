@@ -14,16 +14,40 @@
         "tab": "Docs",
         "groups": [
           {
-            "group": "Docs",
+            "group": "Documentation",
             "pages": [
-              "quickstart",
-              "commands",
-              "copytrading",
-              "faq",
-              "fee-tiers",
-              "levels",
-              "points",
-              "referrals"
+              {
+                "page": "quickstart",
+                "icon": "play-circle"
+              },
+              {
+                "page": "commands",
+                "icon": "info"
+              },
+              {
+                "page": "points",
+                "icon": "coins"
+              },
+              {
+                "page": "faq",
+                "icon": "help-circle"
+              },
+              {
+                "page": "levels",
+                "icon": "arrow-up"
+              },
+              {
+                "page": "fee-tiers",
+                "icon": "users"
+              },
+              {
+                "page": "referrals",
+                "icon": "briefcase"
+              },
+              {
+                "page": "copytrading",
+                "icon": "message-circle"
+              }
             ]
           }
         ]
