@@ -3,11 +3,11 @@
   "theme": "mint",
   "name": "Levy Trade",
   "colors": {
-    "primary": "#E24545",
-    "light": "#E24545",
-    "dark": "#A82828"
+    "primary": "#FFFFFF",
+    "light": "#FFFFFF",
+    "dark": "#FFFFFF"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/images/levytradelogo-closeup.png",
   "navigation": {
     "tabs": [
       {
@@ -79,5 +79,8 @@
     "socials": {
       "x": "https://x.com/levytrade"
     }
+  },
+  "background": {
+    "decoration": "windows"
   }
 }
