@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Levy Trade",
   "colors": {
-    "primary": "#26a69a",
-    "light": "#26a69a",
-    "dark": "#1a7a71"
+    "primary": "#E24545",
+    "light": "#E24545",
+    "dark": "#A82828"
   },
   "favicon": "/favicon.svg",
   "navigation": {
