@@ -25,8 +25,8 @@
     ]
   },
   "logo": {
-    "light": "/images/levytradelogo.png",
-    "dark": "/images/levytradelogo.png"
+    "light": "/images/levytradelogo-closeup.png",
+    "dark": "/images/levytradelogo-closeup.png"
   },
   "navbar": {
     "links": [
