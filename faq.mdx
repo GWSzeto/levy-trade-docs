@@ -5,7 +5,7 @@ description: "Frequently Asked Questions"
 
 ### Where are private keys stored?
 
-Managed wallet keys are created locally by Levy Trade and encrypted with GCP KMS before they are stored. The bot only decrypts them when it needs to sign an action or export your EVM key. You can use `/security` in DMs to turn on TOTP 2FA for key export, withdrawals, and sends.
+We use GCP KMS to securely encrypt your private keys. This applies to managed wallets created on Levy Trade.
 
 ### How do I withdraw funds from Levy Trade?
 

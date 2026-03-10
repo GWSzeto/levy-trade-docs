@@ -3,49 +3,154 @@ title: "Commands"
 description: "Documentation for all Levy Trade commands"
 ---
 
-### Getting started
+### /start
 
-- `/start` — creates your managed wallet if needed, shows your deposit addresses, and gives you a short onboarding guide.
-- `/wallet` or `/deposit` — shows your ETH and Solana deposit addresses along with your live perps and spot balances. You can also refresh balances from the inline button.
+View your managed wallet, deposit addresses, live balances, and a short onboarding guide.
 
-### Trading
+### /markets
 
-- `/long` and `/short` — open a perp position. Use `/long <ticker> <leverage> <margin>` or run the command with no arguments to use the interactive flow.
-- `/close` — close a position. Use `/close <ticker> <percentage>`, `/close all <percentage>`, or run `/close` to pick a position first.
-- `/pair` — open one long and one short in the same flow. Format: `/pair <long-ticker> <leverage> <margin> <short-ticker> <leverage> <margin>`.
-- `/limit` — place a limit order. Format: `/limit <long/short> <ticker> <leverage> <price> <margin>`, or run `/limit` to use the interactive flow.
-- `/stoploss` and `/takeprofit` — place trigger exits on an open position.
-- `/orders` — shows your open orders and lets you cancel them.
-- `/positions` — shows your open positions. You can also use `/positions @username` to view another user's positions.
+View all tradeable perp markets. You can also paginate through the markets with the left and right arrows.
 
-### Markets and pricing
+### /long and /short
 
-- `/markets` — shows the available perp markets, sorted by 24-hour notional volume, with pagination.
-- `/chart` or `/c` — shows a chart for a token. Use `/chart <ticker> [timeframe]`. Supported timeframes are `1m`, `5m`, `1h`, `12h`, `1d`, and `1w`.
-- `/price` — shows the latest price for a token. Example: `/price BTC`.
-- `/hype` — quick shortcut for the HYPE price.
-- `/alert` — sets a price alert. Example: `/alert HYPE $20`.
+Long or short a token. Once you enter `/long` or `/short`, you will be prompted for the ticker, the leverage, and the margin you want to use.
 
-### Leaderboards and performance
+You can also use the following shorthand syntax: `/long <ticker> <leverage> <margin>`.
 
-- `/leaderboard` or `/leaderboards` — shows the leaderboard for the current group chat. This command is group-only. Supported timeframes are `1d`, `7d`, `30d`, and `all`. `week` is accepted as an alias for `7d`.
-- `/playerleaderboards` — shows the global player leaderboard across the bot. It uses the same timeframes as the group leaderboard.
-- `/pnl` — shows your realized PnL chart. You can also use `/pnl @username`, `/pnl 30d`, or combine them.
-- `/stats` — shows your volume, trade count, win rate, PnL, level, rakeback, and direct referral stats.
-- `/level` — shows your current level, XP progress, fee tier, rakeback, cards unlocked, and next reward milestone.
+### /close \<ticker\> \<percentage\>
 
-### Rewards and referrals
+Close an open position. Once you enter `/close`, you can choose the position and the percentage you want to close.
 
-- `/invite` — shows your referral code, invite link, L1/L2/L3 counts, and total referral earnings.
-- `/rewards` — shows your claimable referral earnings and rakeback. Claims require at least 10 USDC.
-- `/points` — shows your points balance, rank, next distribution, and total points distributed. See [Points](/points) for more details.
+You can also use the following shorthand syntax:
 
-### Wallet and account management
+- `/close BTC 100%` — closes 100% of your BTC position.
+- `/close all 30%` — closes 30% of all open positions.
 
-- `/send` — sends USDC to another user from a managed wallet. You can use `/send @username <amount>`, reply to someone's message with `/send <amount>`, or use the interactive flow. Minimum send amount is 5 USDC. Aliases: `/tip`, `/heal`, `/revive`.
-- `/withdraw` — withdraws USDC from a managed wallet to either Hyperliquid or Arbitrum. You can use `/withdraw <address> <amount>` or the interactive flow.
-- `/transfer` — moves USDC between perps and spot. Use `/transfer spot <amount>` for perps to spot, `/transfer perps <amount>` for spot to perps, or the interactive flow.
-- `/accounts` — shows your linked accounts, lets you add API accounts, switch your primary account, and remove API accounts. Adding an API account is done in DMs.
-- `/settings` — opens the settings menu. From there you can view stats, accounts, balances, withdrawals, transfers, key export, security, and support.
-- `/security` — DM-only command for enabling or disabling TOTP 2FA on a managed wallet.
-- `/support` — opens the support chat.
+### /positions
+
+View your open positions. You can also call `/positions @username` to view the positions of someone else with an account.
+
+### /leaderboard and /leaderboards
+
+View the leaderboard in the current group chat. This command is only available in group chats.
+
+You can also specify one of the following timeframes: `1d` (default), `7d`, `30d`, or `all`. `week` is accepted as an alias for `7d`.
+
+### /playerleaderboards
+
+View the global player leaderboard across the bot.
+
+You can also specify one of the following timeframes: `1d` (default), `7d`, `30d`, or `all`. `week` is accepted as an alias for `7d`.
+
+### /chart or /c
+
+Use e.g. `/chart BTC` to show the BTC chart. Charts also display group members' fills when you use them in group chats.
+
+You can also specify one of the following timeframes: `1m`, `5m`, `1h` (default), `12h`, `1d`, or `1w`.
+
+### /pnl
+
+View your realized PnL chart. You can call `/pnl @username` to view the PnL chart of someone else with an account.
+
+You can also specify one of the following timeframes: `1d`, `7d` (default), `30d`, or `all`.
+
+### /pair
+
+How to open a pair trade:
+
+`/pair [ticker-to-long] [leverage] [margin] [ticker-to-short] [leverage] [margin]`
+
+Example: `/pair BTC 10 1000 ETH 10 2000`
+
+### /limit
+
+How to place a limit order:
+
+Limit long: `/limit [long] [ticker] [leverage] [price] [margin]`
+
+Limit short: `/limit [short] [ticker] [leverage] [price] [margin]`
+
+You may also type `/limit` and enter each step individually while getting acquainted with the syntax.
+
+Example: `/limit long HYPE 3 15 1000`
+
+### /stoploss and /takeprofit
+
+Use these commands to set stop losses or take profits on your open positions.
+
+### /invite
+
+Get your referral code, invite link, live L1, L2, and L3 counts, and total referral earnings.
+
+### /price
+
+Use e.g. `/price BTC` to get the current price of BTC.
+
+### /hype
+
+Get the current price of HYPE.
+
+### /alert
+
+Use e.g. `/alert HYPE $20` to get a price alert when HYPE hits `$20`.
+
+### /points
+
+See how many points you have earned. See the [Points](/points) section for more details.
+
+### /rewards
+
+View your claimable referral earnings and rakeback. You need at least `10 USDC` available to submit a claim.
+
+### /level
+
+View your current level, XP progress, fee tier, rakeback, and next reward.
+
+### /wallet or /deposit
+
+View your wallet addresses and balances. You can also refresh balances from the inline button.
+
+### /send
+
+Use `/send @username 10` to send someone in your group chat USDC. You can also reply to someone's message with `/send 10`. You must have a Levy Trade-managed wallet to do so, and the minimum you can send is `5 USDC`.
+
+You can also use the following aliases: `/heal`, `/tip`, `/revive`.
+
+### /withdraw
+
+Withdraw USDC from a managed wallet to another Hyperliquid or Arbitrum address.
+
+You can also use the following shorthand syntax: `/withdraw <address> <amount>`.
+
+### /transfer
+
+Transfer USDC between your spot and perps accounts. You must have a Levy Trade-managed wallet to transfer.
+
+You can also use the following shorthand syntax:
+
+- `/transfer spot 100` — transfers 100 USDC from perps to spot.
+- `/transfer perps 100` — transfers 100 USDC from spot to perps.
+
+### /accounts
+
+Manage your accounts (wallets). You can add an API account, set your primary account, and remove API accounts. Adding an API account is done in DMs.
+
+### /orders
+
+View your open orders and cancel them.
+
+### /stats
+
+View your trading stats such as volume, trades made, win rate, PnL, level, and referral stats.
+
+### /settings
+
+Open the settings menu, where you can view stats, balances, withdrawals, transfers, accounts, key export, security, and support.
+
+### /security
+
+Turn TOTP 2FA on or off for a managed wallet. This command is only available in DMs.
+
+### /support
+
+Open the support chat.
