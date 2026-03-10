@@ -22,16 +22,7 @@
           "referrals"
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Telegram Bot",
-          "href": "https://t.me/levy_trade_bot",
-          "icon": "paper-plane"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
