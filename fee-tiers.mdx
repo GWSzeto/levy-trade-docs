@@ -3,55 +3,55 @@ title: "Fee Tiers"
 description: "Fees and Discounts"
 ---
 
-Perp fees on Levy Trade consist of **three stacked components**. Spot buys are **free**, and spot sells are charged at **2x your effective perp taker fee** after the discounts below are applied.
+Fees on Levy Trade consist of **three components**.
 
 ## Permanent Level-Based Discounts
 
 Traders unlock permanent fee discounts as they level up. At Level 98, your base fee reaches **0.010% maker / 0.025% taker** before any other discounts are applied.
 
 | Level | Maker fee | Taker fee |
-|-------|-----------|-----------|
-| 1 | 0.025% | 0.040% |
-| 15 | 0.024% | 0.039% |
-| 30 | 0.023% | 0.038% |
-| 40 | 0.022% | 0.037% |
-| 50 | 0.021% | 0.036% |
-| 58 | 0.020% | 0.035% |
-| 65 | 0.019% | 0.034% |
-| 72 | 0.018% | 0.033% |
-| 77 | 0.017% | 0.032% |
-| 81 | 0.016% | 0.031% |
-| 84 | 0.015% | 0.030% |
-| 87 | 0.014% | 0.029% |
-| 90 | 0.013% | 0.028% |
-| 93 | 0.012% | 0.027% |
-| 96 | 0.011% | 0.026% |
-| 98 | 0.010% | 0.025% |
+| ----- | --------- | --------- |
+| 1     | 0.025%    | 0.040%    |
+| 15    | 0.024%    | 0.039%    |
+| 30    | 0.023%    | 0.038%    |
+| 40    | 0.022%    | 0.037%    |
+| 50    | 0.021%    | 0.036%    |
+| 58    | 0.020%    | 0.035%    |
+| 65    | 0.019%    | 0.034%    |
+| 72    | 0.018%    | 0.033%    |
+| 77    | 0.017%    | 0.032%    |
+| 81    | 0.016%    | 0.031%    |
+| 84    | 0.015%    | 0.030%    |
+| 87    | 0.014%    | 0.029%    |
+| 90    | 0.013%    | 0.028%    |
+| 93    | 0.012%    | 0.027%    |
+| 96    | 0.011%    | 0.026%    |
+| 98    | 0.010%    | 0.025%    |
 
 ## 30D Volume-Based Discounts
 
-In addition to your level-based discount, trading actively within the last 30 days earns you further fee reductions, up to **1.5 bps**.
+In addition to your level-based discount, trading actively within the last 30 days earns you further fee reductions, up to **1.5 bps**. Discounts scale according to your rolling 30-day trading volume:
 
-| Rolling 30D volume | Discount |
-|--------------------|----------|
-| < $10M | 0 bps |
-| >= $10M | -0.3 bps |
-| >= $25M | -0.6 bps |
-| >= $100M | -0.9 bps |
-| >= $500M | -1.2 bps |
-| >= $1B | -1.5 bps |
+| Rolling 30D volume | Discount          |
+| ------------------ | ----------------- |
+| \< \$10M           | 0                 |
+| \>= \$10M          | -0.003% (0.3 bps) |
+| \>= \$25M          | -0.006% (0.6 bps) |
+| \>= \$100M         | -0.009% (0.9 bps) |
+| \>= \$500M         | -0.012% (1.2 bps) |
+| \>= \$1B           | -0.015% (1.5 bps) |
 
 ## Leverage-Based Discount (Per-Trade)
 
 Every individual trade also qualifies for a dynamic discount based on the **leverage you select for that trade**. The discount grows linearly to a maximum of **4 bps at 40x leverage**.
 
-| Effective leverage | Discount |
-|--------------------|----------|
-| 0x | 0 bps |
-| 10x | -1.0 bps |
-| 20x | -2.0 bps |
-| 30x | -3.0 bps |
-| 40x+ | -4.0 bps |
+| Effective leverage | Additional Discount |
+| ------------------ | ------------------- |
+| 0x                 | 0 bps               |
+| 10x                | -1.0 bps            |
+| 20x                | -2.0 bps            |
+| 30x                | -3.0 bps            |
+| 40x+               | -4.0 bps            |
 
 _The leverage discount applies on both the opening and closing side of a position. Total fees can never be negative; any discount that would reduce the fee below 0 bps is capped at 0 bps._
 
@@ -59,7 +59,7 @@ _The leverage discount applies on both the opening and closing side of a positio
 
 Spot buys are free. Spot sell fees are derived from your final perp taker fee after level, 30-day volume, and leverage discounts are applied.
 
-| Trade type | Fee |
-|------------|-----|
-| Spot buy | 0% |
-| Spot sell | 2x your effective perp taker fee |
+| Trade type | Fee                              |
+| ---------- | -------------------------------- |
+| Spot buy   | 0%                               |
+| Spot sell  | 2x your effective perp taker fee |
