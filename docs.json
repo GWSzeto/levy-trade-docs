@@ -25,8 +25,8 @@
     ]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/images/levytradelogo.png",
+    "dark": "/images/levytradelogo.png"
   },
   "navbar": {
     "links": [
@@ -43,5 +43,8 @@
   },
   "background": {
     "decoration": "windows"
+  },
+  "appearance": {
+    "default": "dark"
   }
 }
